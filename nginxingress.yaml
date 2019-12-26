@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: nginxtest
+
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: nginxfs
+  name: nginxfs
+  namesapce: nginxtest
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: nginxfs
+  template:
